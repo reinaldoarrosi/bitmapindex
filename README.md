@@ -2,6 +2,8 @@
 
 This is a bitmap indexing library based on the amazing EWAH bitmap compression library available at https://github.com/lemire/javaewah
 
+There is also a C# version: https://github.com/reinaldoarrosi/CSharp-BitmapIndex
+
 ##Installing
 
 - Clone this repository
@@ -171,6 +173,6 @@ An example is to find printers where the brand is HP and with a printing perform
             
     EWAHCompressedBitmap result = index.query(criteria);
     
-The query returns an EWAHCompressedBitmap and we can use the getPositions() method to retrieve the bits that are set, which in turn matches the rows that satisfies our criteria.
+The query returns an EWAHCompressedBitmap and we can use the **getPositions()** method to retrieve the bits that are set, which in turn matches the rows that satisfies our criteria.
 
 Thanks to the amazing compression offered by the EWAH compression library this index scales pretty well and can be kept in-memory even with millions of rows in the dataset. The speed is amazing due to the fact that the criteria evaluation is simply a binary operation.
